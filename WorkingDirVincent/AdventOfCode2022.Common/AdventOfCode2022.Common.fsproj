@@ -7,7 +7,7 @@
   <ItemGroup>
     <Content Include="paket.references" />
     <Compile Include="String.fs" />
-    <Compile Include="FParsecResult.fs" />
+    <Compile Include="FParsec.fs" />
     <Compile Include="Tuple.fs" />
     <Compile Include="List.fs" />
     <Compile Include="Int.fs" />

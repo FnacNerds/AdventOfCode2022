@@ -7,4 +7,4 @@ open FSharp.Core.Operators.Checked
 [<RequireQualifiedAccess>]
 module DataParser =
 
-    let parse = run pfail
+    let parse = failwith "Not implemented"
