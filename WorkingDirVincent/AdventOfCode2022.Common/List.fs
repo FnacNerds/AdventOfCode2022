@@ -15,5 +15,14 @@ module List =
     let groupByFst list =
         list |> List.groupBy fst |> List.map (fun (a, b) -> (a, (b |> List.map snd)))
 
+    let mapFst f list =
+        list |> List.map (fun (a, b) -> (f a, b))
+
+    let mapFst' f list =
+        list |> List.map (fun (a, b) -> (f (a, b), b))
+
     let mapSnd f list =
         list |> List.map (fun (a, b) -> (a, f b))
+
+    let mapSnd' f list =
+        list |> List.map (fun (a, b) -> (a, f (a, b)))
