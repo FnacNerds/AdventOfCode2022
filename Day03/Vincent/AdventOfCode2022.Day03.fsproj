@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <GenerateProgramFile>true</GenerateProgramFile>
+    <WarningsAsErrors>FS0025</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="data\sample" />
+    <Content Include="data\input" />
+    <Compile Include="DataParser.fs" />
+    <Compile Include="Solution.fs" />
+    <Compile Include="Tests.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WorkingDirVincent\AdventOfCode2022.Common\AdventOfCode2022.Common.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="7.0.0" />
+    <PackageReference Include="FParsec" Version="1.1.1" />
+    <PackageReference Include="FSharp.Data.LiteralProviders" Version="1.0.3" />
+    <PackageReference Include="FsToolkit.ErrorHandling" Version="4.0.0" />
+    <PackageReference Include="FsUnit" Version="5.1.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.3.1" />
+    <PackageReference Update="FSharp.Core" Version="7.0.0" />
+  </ItemGroup>
+</Project>
