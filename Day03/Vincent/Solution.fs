@@ -21,10 +21,13 @@ module Solution =
     let part1 =
         DataParser.parse
         >> Seq.map (
-            (Seq.map itob)
-            >> Seq.toArray
-            >> Array.splitInHalf
-            >> (Tuple.map (Array.reduce (|||)))
+            (Seq.map itob >> Seq.toArray)
+            >> (fun a ->
+                let halfIndex = a.Length / 2
+
+                [ 0 .. (halfIndex - 1) ]
+                |> Seq.fold (fun (left, right) index -> (left ||| a[index], right ||| a[index + halfIndex])) (0UL, 0UL)
+            )
             >> Tuple.join (&&&)
             >> btoi
         )
