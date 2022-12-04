@@ -1,9 +1,8 @@
+root = true
+
 [*.{fs,fsx}]
 fsharp_multiline_block_brackets_on_same_column = true
-fsharp_experimental_stroustrup_style = true
 fsharp_multi_line_lambda_closing_newline = true
+fsharp_bar_before_discriminated_union_declaration = true
+fsharp_experimental_stroustrup_style = true
 fsharp_keep_max_number_of_blank_lines = 1
-
-[Tests.fs]
-fsharp_max_function_binding_width = 80
-fsharp_disable_fantomas = true

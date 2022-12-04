@@ -6,12 +6,18 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode2022.Common", "AdventOfCode2022.Common\AdventOfCode2022.Common.fsproj", "{37408677-B3E9-4234-A8C0-156E70879AA3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{197F22D4-7701-4DD1-BF93-625AD7F73463}"
+	ProjectSection(SolutionItems) = preProject
+		..\.editorconfig = ..\.editorconfig
+		..\.fantomasignore = ..\.fantomasignore
+	EndProjectSection
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode2022.Day01", "..\Day01\Vincent\AdventOfCode2022.Day01.fsproj", "{931B912D-43F7-4C70-841A-52E535EB9C38}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode2022.Day02", "..\Day02\Vincent\AdventOfCode2022.Day02.fsproj", "{4DC69DB4-0FB0-4CF5-B7FC-E2F63937B99A}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode2022.Day03", "..\Day03\Vincent\AdventOfCode2022.Day03.fsproj", "{D3A1776E-5D51-4F61-8EF3-D4B75699046E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AdventOfCode2022.Day04", "..\Day04\Vincent\AdventOfCode2022.Day04.fsproj", "{91FE7267-6497-4EAB-B004-6715E1548D60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,5 +44,9 @@ Global
 		{D3A1776E-5D51-4F61-8EF3-D4B75699046E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3A1776E-5D51-4F61-8EF3-D4B75699046E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3A1776E-5D51-4F61-8EF3-D4B75699046E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91FE7267-6497-4EAB-B004-6715E1548D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91FE7267-6497-4EAB-B004-6715E1548D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91FE7267-6497-4EAB-B004-6715E1548D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91FE7267-6497-4EAB-B004-6715E1548D60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

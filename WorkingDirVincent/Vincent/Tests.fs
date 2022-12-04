@@ -12,6 +12,6 @@ module Tests =
     type input = TextFile.data.input
 
     let [<Test>] ``Test 1.1`` () = Solution.part1 sample.Text |> should equal -1
-    let [<Test>] ``Test 1.2`` () = Solution.part1 input.Text |> should equal -1 
-    let [<Test>] ``Test 2.1`` () = Solution.part2 sample.Text |> should equal -1 
+    let [<Test>] ``Test 1.2`` () = Solution.part1 input.Text |> should equal -1
+    let [<Test>] ``Test 2.1`` () = Solution.part2 sample.Text |> should equal -1
     let [<Test>] ``Test 2.2`` () = Solution.part2 input.Text |> should equal -1

@@ -59,7 +59,7 @@ module DataParser =
         <|> (pchar 'X' >>% 50)
         <|> (pchar 'Y' >>% 51)
         <|> (pchar 'Z' >>% 52)
-    
-    let parseLine = many1 parseId 
-    let parseContents = sepBy1 parseLine newline 
+
+    let parseLine = many1 parseId
+    let parseContents = sepBy1 parseLine newline
     let parse = (run (parseContents .>> eof)) >> unwrap
