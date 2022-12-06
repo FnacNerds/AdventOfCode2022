@@ -1,11 +1,18 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\vremond\AppData\Local\JetBrains\Rider2022.2\resharper-host\temp\Rider\vAny\CoverageData\_AdventOfCode2022.1991276372\Snapshot\snapshot.utdcvr</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3dc94357_002D4032_002D47e4_002Db46b_002D7be8ae3a00c4/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Project Location="D:\VRM\Projects\AdventOfCode2022\Day05\Vincent" Presentation="&amp;lt;AdventOfCode2022.Day05&amp;gt;" /&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2190cd9e_002D95b6_002D4ea7_002D9edf_002Dc87871abea9b/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Not&gt;&#xD;
+    &lt;Or&gt;&#xD;
+      &lt;Project Location="D:\VRM\Projects\AdventOfCode2022\Day01\Vincent" Presentation="&amp;lt;AdventOfCode2022.Day01&amp;gt;" /&gt;&#xD;
+      &lt;Project Location="D:\VRM\Projects\AdventOfCode2022\Day02\Vincent" Presentation="&amp;lt;AdventOfCode2022.Day02&amp;gt;" /&gt;&#xD;
+      &lt;Project Location="D:\VRM\Projects\AdventOfCode2022\Day03\Vincent" Presentation="&amp;lt;AdventOfCode2022.Day03&amp;gt;" /&gt;&#xD;
+      &lt;Project Location="D:\VRM\Projects\AdventOfCode2022\Day04\Vincent" Presentation="&amp;lt;AdventOfCode2022.Day04&amp;gt;" /&gt;&#xD;
+      &lt;Project Location="D:\VRM\Projects\AdventOfCode2022\Day05\Vincent" Presentation="&amp;lt;AdventOfCode2022.Day05&amp;gt;" /&gt;&#xD;
+    &lt;/Or&gt;&#xD;
+  &lt;/Not&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a2abfac0_002D0e10_002D4179_002D87fe_002D478cab6fe8f4/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="3" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Solution /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
+	
 	
 	
 	
