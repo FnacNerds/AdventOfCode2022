@@ -1,26 +1,21 @@
-function hasDuplicates(a) {
-  for (let i = 0; i < a.length; i++) {
-    if (a.indexOf(a[i]) !== a.lastIndexOf(a[i])) {
-      return true;
-    }
+function hasDuplicatesPerf(input, index, offset) {
+  const chars = input.slice(index, index + offset);
+  if (new Set([...chars]).size === offset) {
+    return true;
   }
-  return false;
 }
 
 const input = await Deno.readTextFile("input.txt", "utf-8");
 
-// P1
-for (let i = 3; i < input.length; i++) {
-  if (!hasDuplicates([input[i - 3], input[i - 2], input[i - 1], input[i]])) {
-    console.log(i);
-    break;
+let hasFoundMarker1 = false;
+let hasFoundMarker2 = false;
+for (let i = 0; i < input.length; i++) {
+  if (!hasFoundMarker1 && hasDuplicatesPerf(input, i, 4)) {
+    console.log(i + 4);
+    hasFoundMarker1 = true;
   }
-}
-
-// P2
-for (let i = 0; i < input.length - 13; i++) {
-  if (!hasDuplicates(input.slice(i, i + 14))) {
+  if (!hasFoundMarker2 && hasDuplicatesPerf(input, i, 14)) {
     console.log(i + 14);
-    break;
+    hasFoundMarker2 = true;
   }
 }
