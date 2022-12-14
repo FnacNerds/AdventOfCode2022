@@ -1,5 +1,6 @@
 ﻿namespace AdventOfCode2022.Common
 
+open System.ComponentModel.DataAnnotations
 open FParsec
 
 module FParsec =
@@ -13,3 +14,6 @@ module FParsec =
     // https://stackoverflow.com/questions/45653927/fparsec-backtracking-sepby
     let backtrackingSepBy1 p sep =
         pipe2 p (many (sep >>? p)) (fun hd tl -> hd :: tl)
+
+    let (>>>) (p: Parser<'a,'u>) (q: Parser<'b,'u>): Parser<unit, 'u> =
+         pipe2 p q (fun _ _ -> ())

@@ -17,6 +17,9 @@ module List =
 
     let mapFst f list =
         list |> List.map (fun (a, b) -> (f a, b))
+        
+    let mapWith f list =
+        list |> List.map (fun a -> (a, f a))
 
     let mapFst' f list =
         list |> List.map (fun (a, b) -> (f (a, b), b))
@@ -26,3 +29,5 @@ module List =
 
     let mapSnd' f list =
         list |> List.map (fun (a, b) -> (a, f (a, b)))
+
+    let pop list = List.head list, List.skip 1 list
