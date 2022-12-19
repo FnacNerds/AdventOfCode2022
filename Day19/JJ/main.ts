@@ -1,5 +1,5 @@
-let input = await Deno.readTextFile("input.txt", "utf-8");
-// let input = await Deno.readTextFile("testInput.txt", "utf-8");
+// let input = await Deno.readTextFile("input.txt", "utf-8");
+let input = await Deno.readTextFile("testInput.txt", "utf-8");
 
 type Blueprint = {
   id: number;
@@ -20,7 +20,7 @@ let blueprints: Blueprint[] = [];
 input.split("\n").map((line) => {
   let groups = regex.exec(line)!;
   blueprints.push({
-    id: groups[1],
+    id: +groups[1],
     Robots: [
       {
         type: "ore",
@@ -71,68 +71,97 @@ blueprints.map((bp) => {
   let clayCost = clayBot.cost;
   let obsCost = obsBot.cost;
   let geodeCost = geodeBot.cost;
-  console.log(oreCost);
-  console.log(clayCost);
-  console.log(obsCost);
-  console.log(geodeCost);
+  // console.log(oreCost);
+  // console.log(clayCost);
+  // console.log(obsCost);
+  // console.log(geodeCost);
 
   let maxOreCost = Math.max(
     ...[oreCost.ore, clayCost.ore, obsCost.ore, geodeCost.ore]
   );
 
-  console.log("MAX " + maxOreCost);
-  let clay = 0,
-    ore = 0,
-    obs = 0,
-    geode = 0;
-  let bots = {
-    ore: 1,
-    clay: 0,
-    obs: 0,
-    geode: 0,
-  };
-  for (let i = 0; i < 24; i++) {
-    console.log("minute " + i);
+  // console.log("MAX " + maxOreCost);
+  let maxGeodes = 0;
 
-    if (ore >= geodeCost.ore && obs >= geodeCost.obs) {
-      console.log("build a geodebot");
-      bots.geode++;
-      geode--;
-      ore -= geodeCost.ore;
-      obs -= geodeCost.obs;
-    }
-    if (
-      bots.obs < geodeCost.obs &&
-      ore >= obsCost.ore &&
-      clay >= obsCost.clay
-    ) {
-      console.log("build an obs bot");
-      bots.obs++;
-      obs--;
-      ore -= obsCost.ore;
-      clay -= obsCost.clay;
-    }
-    if (bots.clay < obsCost.clay && ore >= clayCost.ore) {
-      console.log("build a clay bot");
-      clay--;
-      bots.clay++;
-      ore -= clayCost.ore;
-    }
-    if (bots.ore < maxOreCost && ore >= oreCost.ore) {
-      console.log("build an ore bot");
-      ore--;
-      bots.ore++;
-      ore -= oreCost.ore;
-    }
+  for (let tries = 0; tries < 10000; tries++) {
+    let clay = 0,
+      ore = 0,
+      obs = 0,
+      geode = 0;
+    let bots = {
+      ore: 1,
+      clay: 0,
+      obs: 0,
+      geode: 0,
+    };
 
-    ore += bots.ore;
-    clay += bots.clay;
-    obs += bots.obs;
-    geode += bots.geode;
+    for (let i = 0; i < 24; i++) {
+      // console.log("minute " + (i + 1));
 
-    console.log(ore);
-    console.log(clay);
-    console.log(obs);
-    console.log(geode);
+      // console.log(ore);
+      // console.log(clay);
+      // console.log(obs);
+      // console.log(geode);
+
+      if (ore >= geodeCost.ore && obs >= geodeCost.obs) {
+        // console.log("build a geodebot");
+        bots.geode++;
+        geode--;
+        ore -= geodeCost.ore;
+        obs -= geodeCost.obs;
+      }
+      if (
+        Math.random() < 0.5 &&
+        bots.obs < geodeCost.obs &&
+        ore >= obsCost.ore &&
+        clay >= obsCost.clay
+      ) {
+        // console.log("build an obs bot");
+        bots.obs++;
+        obs--;
+        ore -= obsCost.ore;
+        clay -= obsCost.clay;
+      }
+      if (
+        Math.random() < 0.5 &&
+        bots.clay < obsCost.clay &&
+        ore >= clayCost.ore
+      ) {
+        // console.log("build a clay bot");
+        bots.clay++;
+        clay--;
+        ore -= clayCost.ore;
+      }
+      if (Math.random() < 0.5 && bots.ore < maxOreCost && ore >= oreCost.ore) {
+        // console.log("build an ore bot");
+        bots.ore++;
+        ore--;
+        ore -= oreCost.ore;
+      }
+
+      ore += bots.ore;
+      clay += bots.clay;
+      obs += bots.obs;
+      geode += bots.geode;
+
+      // console.log(ore);
+      // console.log(clay);
+      // console.log(obs);
+      // console.log(geode);
+    }
+    // console.log(geode);
+    if (geode > maxGeodes) {
+      console.log("mmmm");
+      console.log(bots);
+      console.log(ore);
+      console.log(clay);
+      console.log(obs);
+      console.log(geode);
+      maxGeodes = geode;
+    }
   }
+  console.log("max g " + maxGeodes);
+  // console.log(maxGeodes * bp.id);
+  max += maxGeodes * bp.id;
 });
+console.log(max);
