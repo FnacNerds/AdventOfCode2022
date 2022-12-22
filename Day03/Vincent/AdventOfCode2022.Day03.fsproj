@@ -7,6 +7,9 @@
     <WarningsAsErrors>FS0025</WarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="..\README.md">
+      <Link>README.md</Link>
+    </Content>
     <Content Include="data\sample" />
     <Content Include="data\input" />
     <Compile Include="DataParser.fs" />
